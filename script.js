@@ -1,11 +1,31 @@
+// Facebook Pixel Initialization
+!function(f,b,e,v,n,t,s) {
+    if(f.fbq) return; 
+    n=f.fbq=function() {
+        n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)
+    };
+    if(!f._fbq) f._fbq=n; 
+    n.push=n; n.loaded=!0; 
+    n.version='2.0';
+    n.queue=[]; 
+    t=b.createElement(e); 
+    t.async=!0;
+    t.src=v; 
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1330381201617525'); 
+fbq('track', 'PageView'); 
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scroll effect
     document.querySelector("a[href='#apply']").addEventListener("click", function (event) {
         event.preventDefault();
         document.getElementById("apply").scrollIntoView({ behavior: "smooth" });
     });
 
-    // Form validation and Facebook Pixel event tracking
+    // Form validation and Facebook Pixel event tracking on form submit
     document.getElementById("leadForm").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent form submission
 
@@ -14,31 +34,33 @@ document.addEventListener("DOMContentLoaded", function () {
         let phone = document.getElementById("phone").value.trim();
         let country = document.getElementById("country").value;
 
-        // Validation
+    
         if (name === "" || email === "" || phone === "" || country === "") {
             alert("Please fill in all fields.");
             return;
         }
 
+    
         if (!/^\S+@\S+\.\S+$/.test(email)) {
             alert("Enter a valid email address.");
             return;
         }
 
+    
         if (!/^\d{10}$/.test(phone)) {
             alert("Enter a valid 10-digit phone number.");
             return;
         }
 
-        // Send Lead Event to Facebook Pixel
+    
         fbq('track', 'Lead', {
-            content_name: 'Study MBBS Abroad Lead',  // Optional dynamic content
-            value: 1.00,  // Optional tracking value
-            currency: 'USD'  // Optional, specify if needed
+            content_name: 'Study MBBS Abroad Lead',  
+            value: 1.00,  
+            currency: 'USD'  
         });
 
-        // Optional: Submit the form after pixel tracking (remove the preventDefault in real scenario)
+    
         alert("Form submitted successfully!");
-        document.getElementById("leadForm").reset(); // Reset form after submission
+        document.getElementById("leadForm").reset(); 
     });
 });
