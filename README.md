@@ -23,7 +23,7 @@ This is a **responsive landing page** for "Study MBBS Abroad" that provides deta
 
 ## 🛠️ Technologies Used  
 - **HTML5** – Page structure  
-- **CSS3 (Tailwind/Bootstrap)** – Styling and responsiveness  
+- **CSS3 (Tailwind)** – Styling and responsiveness  
 - **JavaScript (Vanilla JS)** – Form validation and event tracking  
 - **Google Analytics** – User tracking and insights  
 - **Facebook Pixel** – Lead tracking for marketing campaigns  
@@ -34,5 +34,5 @@ This is a **responsive landing page** for "Study MBBS Abroad" that provides deta
 
 ### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/yourusername/study-mbbs-abroad.git
-cd study-mbbs-abroad
+git clone https://github.com/kanak035/university_insight.git
+cd UNI.INSIGHT
